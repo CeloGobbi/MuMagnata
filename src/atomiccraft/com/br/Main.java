@@ -18,28 +18,50 @@ public class Main extends JavaPlugin implements Listener{
     private static final Logger log = Logger.getLogger("Minecraft");
     public static Economy econ = null;
     private static Chat chat = null;
+    
 
-    @Override
+	@SuppressWarnings("deprecation")
+	@Override
     public void onEnable(){
-		System.out.println("�3[MuMagnata] �6Plugin habilitado!");
-if (!setupEconomy()) {
+    	getServer().getConsoleSender().sendMessage("§3Plugin: §6MuMagnata §2- §3Desenvolvedor: §6Mushu949 §2 §3Prefixo: ["+ getConfig().getString("Prefixo-Do-Plugin") +"]");
+    	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Plugin habilitado!");
+    	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Magnata atual: §2" + getConfig().getString("Magnata_atual"));
+
+		getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Verificando se existe um novo magnata...");
+			            
+    	if (!setupEconomy()) {
             log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
-
             return;
+            
         }
 
 if (!new File(getDataFolder(), "config.yml").exists()){
 	saveResource("config.yml", false);
-
-	getServer().getConsoleSender().sendMessage("�3[MuMagnata] �6Verificando config...");
-	getServer().getConsoleSender().sendMessage("�3[MuMagnata] �4ERRO Config inexistente! �aCriando aquivo config.yml...");
-	getServer().getConsoleSender().sendMessage("�3[MuMagnata] �2Arquivo config.yml criado!");
+	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Verificando config...");
+	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§4ERRO: Config inexistente! §aCriando aquivo config.yml...");
+	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§2Arquivo config.yml criado!");
 }else{
-	getServer().getConsoleSender().sendMessage("�3[MuMagnata] �6Verificando config...");
-	getServer().getConsoleSender().sendMessage("�3[MuMagnata] �2@O arquivo config.yml j� existe!");
-
+	 boolean novo = false;
+		for(OfflinePlayer player : Bukkit.getServer().getOfflinePlayers()){
+			if(player.getName().toLowerCase() != getConfig().getString("Magnata_atual").toLowerCase()){
+			if(econ.getBalance(player.getName()) > econ.getBalance(getConfig().getString("Magnata_atual"))){
+				getConfig().set("Magnata_atual", player.getName());
+				saveConfig();
+				reloadConfig();
+             novo = true;
+			}
+		}
+	}
+			if(novo == true){
+				Bukkit.getServer().broadcastMessage("§2[Magnata] §aTemos um novo magnata!");
+				Bukkit.getServer().broadcastMessage("§2[Magnata] §aParabéns para" + " " + getConfig().getString("Magnata_atual") + "!");
+           } 
+	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Magnata atual: §2" + getConfig().getString("Magnata_atual"));
+	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Verificando config...");
+	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§2O arquivo config.yml já existe!");
 	setupEconomy();
+
 	new BukkitRunnable() {
 		public void run() {
 			Checar();
@@ -51,8 +73,15 @@ if (!new File(getDataFolder(), "config.yml").exists()){
 
     }
 
-public void onDisable(){
+public void onDisable(){;
 log.info(String.format("[%s] Disabled Version %s", getDescription().getName(), getDescription().getVersion()));
+
+getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Magnata atual: §2" + getConfig().getString("Magnata_atual"));
+getServer().getConsoleSender().sendMessage("§3[MuMagnata] §6Plugin desabilitado!");
+getServer().getConsoleSender().sendMessage("§3[MuMagnata] §6Salvando config.yml!");
+reloadConfig();
+saveConfig();
+getServer().getConsoleSender().sendMessage("§3[MuMagnata] §6Magnata atual: §2" + getConfig().getString("Magnata_atual"));
 }
 
     private boolean setupEconomy() {
@@ -85,6 +114,7 @@ log.info(String.format("[%s] Disabled Version %s", getDescription().getName(), g
 		new BukkitRunnable() {
 			@SuppressWarnings("deprecation")
 			public void run(){
+				getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Verificando se existe um novo magnata...");
 				boolean novo = false;
 				for(OfflinePlayer player : Bukkit.getServer().getOfflinePlayers()){
 					if(player.getName().toLowerCase() != getConfig().getString("Magnata_atual").toLowerCase()){
@@ -97,11 +127,11 @@ log.info(String.format("[%s] Disabled Version %s", getDescription().getName(), g
 				}
 			}
 					if(novo == true){
-						Bukkit.getServer().broadcastMessage("�2[Magnata] �aTemos um novo magnata!");
-						Bukkit.getServer().broadcastMessage("�2[Magnata] �aParab�ns para" + " " + getConfig().getString("Magnata_atual") + "!");
-			  }
-			}
-		}.runTaskTimer(this, 5*20, 5*20);
-     }
+						Bukkit.getServer().broadcastMessage("§2[Magnata] §aTemos um novo magnata!");
+						Bukkit.getServer().broadcastMessage("§2[Magnata] §aParabéns para" + " " + getConfig().getString("Magnata_atual") + "!");
+		              }
+		            }
+        }.runTaskTimer(this, 14400*20, 14400*20);
+		     }
 }
  
