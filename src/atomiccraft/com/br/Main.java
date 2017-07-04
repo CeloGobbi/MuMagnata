@@ -20,15 +20,11 @@ public class Main extends JavaPlugin implements Listener{
     private static Chat chat = null;
     
 
-	@SuppressWarnings("deprecation")
 	@Override
     public void onEnable(){
     	getServer().getConsoleSender().sendMessage("§3Plugin: §6MuMagnata §2- §3Desenvolvedor: §6Mushu949 §2 §3Prefixo: ["+ getConfig().getString("Prefixo-Do-Plugin") +"]");
     	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Plugin habilitado!");
-    	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Magnata atual: §2" + getConfig().getString("Magnata_atual"));
-
-		getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Verificando se existe um novo magnata...");
-			            
+    	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Magnata atual: §2" + getConfig().getString("Magnata_atual"));			            
     	if (!setupEconomy()) {
             log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
@@ -42,22 +38,6 @@ if (!new File(getDataFolder(), "config.yml").exists()){
 	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§4ERRO: Config inexistente! §aCriando aquivo config.yml...");
 	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§2Arquivo config.yml criado!");
 }else{
-	 boolean novo = false;
-		for(OfflinePlayer player : Bukkit.getServer().getOfflinePlayers()){
-			if(player.getName().toLowerCase() != getConfig().getString("Magnata_atual").toLowerCase()){
-			if(econ.getBalance(player.getName()) > econ.getBalance(getConfig().getString("Magnata_atual"))){
-				getConfig().set("Magnata_atual", player.getName());
-				saveConfig();
-				reloadConfig();
-             novo = true;
-			}
-		}
-	}
-			if(novo == true){
-				Bukkit.getServer().broadcastMessage("§2[Magnata] §aTemos um novo magnata!");
-				Bukkit.getServer().broadcastMessage("§2[Magnata] §aParabéns para" + " " + getConfig().getString("Magnata_atual") + "!");
-           } 
-	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Magnata atual: §2" + getConfig().getString("Magnata_atual"));
 	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Verificando config...");
 	getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§2O arquivo config.yml já existe!");
 	setupEconomy();
@@ -117,21 +97,65 @@ getServer().getConsoleSender().sendMessage("§3[MuMagnata] §6Magnata atual: §2
 				getServer().getConsoleSender().sendMessage("§3" + getConfig().getString("Prefixo-Do-Plugin")+ " " +"§6Verificando se existe um novo magnata...");
 				boolean novo = false;
 				for(OfflinePlayer player : Bukkit.getServer().getOfflinePlayers()){
+					getConfig().set("Magnata-antigo", "Magnata_atual");
 					if(player.getName().toLowerCase() != getConfig().getString("Magnata_atual").toLowerCase()){
 					if(econ.getBalance(player.getName()) > econ.getBalance(getConfig().getString("Magnata_atual"))){
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo01").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo02").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo03").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo04").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo05").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo06").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo07").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo08").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo09").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo10").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo11").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo12").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo13").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo14").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo15").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo16").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo17").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo18").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo19").replaceAll("@player", getConfig().getString("Magnata_atual")));
+						Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-antigo20").replaceAll("@player", getConfig().getString("Magnata_atual")));
 						getConfig().set("Magnata_atual", player.getName());
 						saveConfig();
-						reloadConfig();
+	    				reloadConfig();
 	                    novo = true;
 					}
 				}
 			}
-					if(novo == true){
-						Bukkit.getServer().broadcastMessage("§2[Magnata] §aTemos um novo magnata!");
-						Bukkit.getServer().broadcastMessage("§2[Magnata] §aParabéns para" + " " + getConfig().getString("Magnata_atual") + "!");
+			if(novo == true){
+				Bukkit.getServer().broadcastMessage("");
+				Bukkit.getServer().broadcastMessage(getConfig().getString("msg-novo-magnata01").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().broadcastMessage(getConfig().getString("msg-novo-magnata02").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().broadcastMessage("");
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual01").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual02").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual03").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual04").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual05").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual06").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual07").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual08").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual09").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual10").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual11").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual12").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual13").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual14").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual15").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual16").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual17").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual18").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual19").replaceAll("@player", getConfig().getString("Magnata_atual")));
+				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), getConfig().getString("Comandos-magnata-atual20").replaceAll("@player", getConfig().getString("Magnata_atual")));
+
 		              }
 		            }
-        }.runTaskTimer(this, 14400*20, 14400*20);
+        }.runTaskLater(this, 1000*20);
 		     }
 }
  

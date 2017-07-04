@@ -1,2 +1,56 @@
+#Magnata atual
 Magnata_atual: Mushu949
+#Magnata-antigo: Mushu
+
+#O prefixo que ira referenciar o plugin no console.
 Prefixo-Do-Plugin: "[MuMagnata]"
+
+#Mensagems de novo magnata
+msg-novo-magnata01: "§2[Magnata] §aParabéns! Temos um novo magnata."
+msg-novo-magnata02: "§2[Magnata] §f@player §ae o novo magnata."
+
+#Comandos que o plugin ira usar para entregar os privilegios de magnata para o novo magnata.
+#Ex: Comandos-magnata-atual01: "manuaddp @player essential.warp.magnata"
+Comandos-magnata-atual01: "Comando"
+Comandos-magnata-atual02: "Comando"
+Comandos-magnata-atual03: "Comando"
+Comandos-magnata-atual04: "Comando"
+Comandos-magnata-atual05: "Comando"
+Comandos-magnata-atual06: "Comando"
+Comandos-magnata-atual07: "Comando"
+Comandos-magnata-atual08: "Comando"
+Comandos-magnata-atual09: "Comando"
+Comandos-magnata-atual10: "Comando"
+Comandos-magnata-atual11: "Comando"
+Comandos-magnata-atual12: "Comando"
+Comandos-magnata-atual13: "Comando"
+Comandos-magnata-atual14: "Comando"
+Comandos-magnata-atual15: "Comando"
+Comandos-magnata-atual16: "Comando"
+Comandos-magnata-atual17: "Comando"
+Comandos-magnata-atual18: "Comando"
+Comandos-magnata-atual19: "Comando"
+Comandos-magnata-atual20: "Comando"
+
+#Comandos que o plugin ira usar para remover os privilegios de magnata para o antigo magnata.
+#Ex: Comandos-magnata-antigo01: "manudelp @player essential.warp.magnata"
+Comandos-magnata-antigo01: "Comando"
+Comandos-magnata-antigo02: "Comando"
+Comandos-magnata-antigo03: "Comando"
+Comandos-magnata-antigo04: "Comando"
+Comandos-magnata-antigo05: "Comando"
+Comandos-magnata-antigo06: "Comando"
+Comandos-magnata-antigo07: "Comando"
+Comandos-magnata-antigo08: "Comando"
+Comandos-magnata-antigo09: "Comando"
+Comandos-magnata-antigo10: "Comando"
+Comandos-magnata-antigo11: "Comando"
+Comandos-magnata-antigo12: "Comando"
+Comandos-magnata-antigo13: "Comando"
+Comandos-magnata-antigo14: "Comando"
+Comandos-magnata-antigo15: "Comando"
+Comandos-magnata-antigo16: "Comando"
+Comandos-magnata-antigo17: "Comando"
+Comandos-magnata-antigo18: "Comando"
+Comandos-magnata-antigo19: "Comando"
+Comandos-magnata-antigo20: "Comando"
