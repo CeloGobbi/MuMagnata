@@ -1,16 +1,49 @@
-#Magnata atual
-Magnata_atual: Mushu949
-#Magnata-antigo: Mushu
+﻿#Magnata atual = O jogador mais rico do servidor.
+Magnata_atual: "Mushu949"
+#Magnata-antigo = O segundo jogador mais rico do servidor.
+Magnata-antigo: "Mushu"
 
 #O prefixo que ira referenciar o plugin no console.
 Prefixo-Do-Plugin: "[MuMagnata]"
 
 #Mensagems de novo magnata
-msg-novo-magnata01: "�2[Magnata] �aParab�ns! Temos um novo magnata."
-msg-novo-magnata02: "�2[Magnata] �f@player �ae o novo magnata."
+#Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
+msg-novo-magnata01: "§2[Magnata] §aParabéns! Temos um novo magnata."
+msg-novo-magnata02: "§2[Magnata] §f@magnata §aganhou a tag que era de §f@exmagnata §ae virou o novo magnata!"
+
+#Mensagem em title que vai aparecer na tela!
+#Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
+title-novo-magnata: "§2Novo Magnata!"
+#Mensagem em subtitle que vai aparecer na tela em baixo da mensagem em title definida em "title-novo-magnata".
+#Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
+subtitle-novo-magnata: "§f@magnata §2é o novo magnata!"
+
+#Title que vai aparecer quando o magnata entrar no servidor!
+#Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
+title-magnata-logou: "§2Magnata"
+#Subtitle que vai aparecer em baixo de title quando o magnata logar!
+#Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
+subtitle-magnata-logou: "§2O magnata §f@magnata §2logou no servidor!"
+#Mensagem que vai aparecer quando o Magnata entrar no servidor.
+#Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
+msg-magnata-logou: "§2O magnata §f@magnata §2logou no servidor!"
+
+#Title que vai aparecer quando o magnata sair do servidor!
+#Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
+title-magnata-deslogou: "§2Magnata"
+#Subtitle que vai aparecer em baixo de title quando o magnata logar!
+#Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
+subtitle-magnata-deslogou: "§2O magnata §f@magnata §2deslogou o servidor"
+#Mensagem que vai aparecer quando o Magnata sair do servidor.
+#Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
+msg-magnata-deslogou: "§2O magnata §f@magnata §2deslogou o servidor!"
+
+#Mensagem de quando o player usar o /magnata
+#Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
+msg-comando-magnata: "§2O magnata atual é: §f@exmagnata§2."
 
 #Comandos que o plugin ira usar para entregar os privilegios de magnata para o novo magnata.
-#Ex: Comandos-magnata-atual01: "manuaddp @player essential.warp.magnata"
+#Ex: Comandos-magnata-atual01: "manuaddp @magnata essential.warp.magnata"
 Comandos-magnata-atual01: "Comando"
 Comandos-magnata-atual02: "Comando"
 Comandos-magnata-atual03: "Comando"
@@ -33,7 +66,7 @@ Comandos-magnata-atual19: "Comando"
 Comandos-magnata-atual20: "Comando"
 
 #Comandos que o plugin ira usar para remover os privilegios de magnata para o antigo magnata.
-#Ex: Comandos-magnata-antigo01: "manudelp @player essential.warp.magnata"
+#Ex: Comandos-magnata-antigo01: "manudelp @exmagnata essential.warp.magnata"
 Comandos-magnata-antigo01: "Comando"
 Comandos-magnata-antigo02: "Comando"
 Comandos-magnata-antigo03: "Comando"
