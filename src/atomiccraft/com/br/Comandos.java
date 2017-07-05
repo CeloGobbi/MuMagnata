@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-public class Comandos implements Listener, CommandExecutor{
+public class Comandos implements CommandExecutor, Listener{
 	public String magnataAtual;
 	public String magnataAntigo;
 	public String titleMagnataLogou;
