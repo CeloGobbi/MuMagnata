@@ -6,3 +6,5 @@ author: Mushu949
 commands:
     magnata:
         description: ver o magnata atual.
+        aliases: [mag, maisrico]
+        usage: Use /magnata
