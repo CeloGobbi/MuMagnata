@@ -181,7 +181,7 @@ HandlerList.unregisterAll();
 
 				}
 		              }
-        }.runTaskLater(this, 10*20); //Temporizador que verifica se existe um nono magnata, ex1: 10*20 = depois de 10 segundo verificar. ex2: 300*20 = depois de 300 segundos verificar.
+        }.runTaskLater(this, 300*20); //Temporizador que verifica se existe um nono magnata, ex1: 10*20 = depois de 10 segundo verificar. ex2: 300*20 = depois de 300 segundos verificar.
 	}
 
 	@Override
