@@ -40,7 +40,7 @@ msg-magnata-deslogou: "§2O magnata §f@magnata §2deslogou o servidor!"
 
 #Mensagem de quando o player usar o /magnata
 #Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
-msg-comando-magnata: "§2O magnata atual é: §f@exmagnata§2."#Mensagem de quando o player usar o /magnata
+msg-comando-magnata: "§2O magnata atual é: §f@magnata§2."
 
 #Variaveis: @magnata = Magnata atual || @exmagnata = Magnata antigo, que perdeu a tag para o atual.
 msg-null-comando-magnata: "§cNão existe magnata atualmente!"
