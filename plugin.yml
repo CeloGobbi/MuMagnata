@@ -1,10 +1,10 @@
-main: atomiccraft.com.br.Main
+main: atomiccraft.com.br.MuMagnata
 name: MuMagnata
-version: 1.0.1
+version: 1.0.3
 author: Mushu949
 
 commands:
     magnata:
         description: ver o magnata atual.
-        aliases: [mag, maisrico]
+        aliases: [mag, maisrico, baltop]
         usage: Use /magnata

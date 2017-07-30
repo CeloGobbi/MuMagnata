@@ -22,7 +22,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import de.Herbystar.TTA.TTA_Methods;
 import net.milkbowl.vault.economy.Economy;
 
-public class Main extends JavaPlugin implements Listener,CommandExecutor{
+public class MuMagnata extends JavaPlugin implements Listener,CommandExecutor{
 	private static final Logger log = Logger.getLogger("Minecraft");
 	private static Economy econ = null;
     
@@ -46,7 +46,7 @@ public class Main extends JavaPlugin implements Listener,CommandExecutor{
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-    getServer().getConsoleSender().sendMessage("§3Plugin: §6MuMagnata §2- §3Desenvolvedor: §6Mushu949 §2 §3Prefixo: ["+ getConfig().getString("Prefixo-Do-Plugin") +"]");
+    getServer().getConsoleSender().sendMessage("§3Plugin: §6MuMagnata §2- §3Desenvolvedor: §6Mushu949 §2 §3Prefixo: ["+ getConfig().getString("Prefixo-Do-Plugin") +"§3]");
 
   if (!new File(getDataFolder(), "config.yml").exists()){
 	saveResource("config.yml", false);
